@@ -4,7 +4,7 @@
                     SLIKA
                 </h1>
                 
-                <hr class="border-indigo-200/50 border rounded-full my-2">
+                <Separator />
 
                 <section class="grid grid-cols-2 items-center text-justify">
                     <p>
@@ -15,7 +15,7 @@
                         class="h-24 w-full object-contain">
                 </section>
                 
-                <hr class="border-indigo-200/50 border rounded-full my-2">
+                <Separator />
 
                 <section class="flex w-full items-center">
                     <img :src="shirt" alt="shirt"
@@ -24,7 +24,7 @@
                         class="h-32 grow object-contain">
                 </section>
 
-                <hr class="border-indigo-200/50 border rounded-full my-2">
+                <Separator />
 
                 <section class="text-justify flex flex-col gap-2">
                     Koraci izrade:
@@ -89,7 +89,7 @@
 
                 </section>
 
-                <hr class="border-indigo-200/50 border rounded-full my-2">
+                <Separator />
 
                 <section class="grid grid-cols-2 text-justify">
                     
@@ -116,6 +116,8 @@
 import shirt from '@/assets/images/shirt.png'
 import layers from '@/assets/images/layers.png'
 import mask from '@/assets/images/mask.png'
+
+import Separator from '@/components/Separator.vue'
 </script>
   
 <style scoped>
