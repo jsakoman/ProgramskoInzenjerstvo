@@ -27,6 +27,10 @@ function promijeniKolicinu(index, akcija) {
   }
 }
 
+function ukloniProizvod(index) {
+  kosarica.value.splice(index, 1);
+}
+
 </script>
 
 <template>
