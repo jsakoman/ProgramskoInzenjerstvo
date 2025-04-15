@@ -1,5 +1,11 @@
 <script setup>
     import { ref } from 'vue'
+
+    import Header from '@/components/Header.vue'
+    import Footer from '@/components/Footer.vue'
+    import Navbar from '@/components/Navbar.vue'
+
+
     const links = [
         { name: "POČETNA", active: true},
         { name: "SLIKA", active: true},
@@ -22,13 +28,7 @@
         <div class="bg-[#535C91]/25 border-x border-[#9290C3]/10 w-[700px] max-w-[700px] shadow-lg
             flex flex-col justify-between px-8 gap-4 overflow-auto">
                 
-            <header class="flex justify-center items-center relative min-h-96">
-                <img src="./assets/images/baner.jpg" alt="baner"
-                    class="absolute w-full h-full object-cover rounded-b-lg">
-                <p class="z-10 font-extralight text-slate-100 sm:text-5xl text-3xl text-center">
-                    Multimedijalni<br>Sustavi
-                </p>
-            </header>
+            <Header />
 
             <nav class="sticky top-0 w-full flex gap-4 flex-wrap items-center justify-around bg-[#070F2B]/25 backdrop-blur-sm py-2 px-8 rounded-lg">
                 <div v-for="link in links" class="text-sm z-10 relative transition" @click="activeLink = link.name"
