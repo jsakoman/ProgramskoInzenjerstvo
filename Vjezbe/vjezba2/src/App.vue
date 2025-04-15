@@ -40,6 +40,8 @@ function ukupnaCijena() {
 </script>
 
 <template>
+  <div class="flex justify-center items-center min-h-screen bg-gray-50 p-4">
+    <div class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
   <div :class="korisnik.jeAdmin ? 'text-blue-500' : 'text-black'" class="p-4">
     <h2 class="text-xl font-bold mb-2">Korisnicki podaci:</h2>
     <p><strong>Ime:</strong> {{ korisnik.osobni_podaci.ime }}</p>  
@@ -95,7 +97,8 @@ function ukupnaCijena() {
   <h3><strong>Sveukupna cijena: </strong></h3>
   <p> {{ ukupnaCijena() }}€</p>
   </div>
-
+</div>
+</div>
 </template>
 
 
