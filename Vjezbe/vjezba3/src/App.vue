@@ -18,6 +18,15 @@ function dodajProizvod() {
   }
 }
 
+function promijeniKolicinu(index, akcija) {
+  const proizvod = kosarica.value[index];
+  proizvod.kolicina += akcija;
+
+  if(proizvod.kolicina <= 0) { // sto ako je kolicina 0 ?
+    proizvod.kolicina = 1;
+  }
+}
+
 </script>
 
 <template>
