@@ -4,6 +4,20 @@ import podaci from './assets/podaci.json'
 const slike = podaci.slike
 const proizvodi = podaci.proizvodi
 const korisnik = podaci.korisnik
+
+function dohvatiCijenu(naziv) {
+  const proizvod = proizvodi.find(p => p.naziv === naziv);
+  return proizvod ? proizvod.cijena : 0;
+}
+
+function ukupnoPoArtiklu(naziv) {
+  const stavka = korisnik.kosarica.find(s => s.naziv === naziv);
+  const cijena = dohvatiCijenu(naziv);
+  return stavka ? cijena * stavka.kolicina : 0;
+}
+
+
+
 </script>
 
 <template>
@@ -22,6 +36,8 @@ const korisnik = podaci.korisnik
     <p><strong>Naziv:</strong> {{ korisnik.kosarica[0].naziv }}</p>
     <img :src="slike.Jabuka" alt="Jabuka" class="w-10 h-10" />
     <p><strong>Kolicina:</strong> {{ korisnik.kosarica[0].kolicina }}</p>
+    <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[0].naziv).toFixed(2) }} €</p>
+    <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[0].naziv).toFixed(2) }}€</p>
   </div>
 
     <!-- MRKVA -->
@@ -29,6 +45,8 @@ const korisnik = podaci.korisnik
       <p><strong>Naziv:</strong> {{ korisnik.kosarica[1].naziv }}</p>
       <img :src="slike.Mrkva" alt="Mrkva" class="w-10 h-10" />
       <p><strong>Kolicina:</strong> {{ korisnik.kosarica[1].kolicina }}</p>
+      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[1].naziv).toFixed(2) }} €</p>
+      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[1].naziv).toFixed(2) }}€</p>
     </div>
 
     <!-- SIR -->
@@ -36,6 +54,8 @@ const korisnik = podaci.korisnik
       <p><strong>Naziv:</strong> {{ korisnik.kosarica[2].naziv }}</p>
       <img :src="slike.Sir" alt="Sir" class="w-10 h-10" />
       <p><strong>Kolicina:</strong> {{ korisnik.kosarica[2].kolicina }}</p>
+      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[2].naziv).toFixed(2) }} €</p>
+      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[2].naziv).toFixed(2) }}€</p>
     </div>    
 
     <!-- KRUH -->
@@ -43,6 +63,8 @@ const korisnik = podaci.korisnik
       <p><strong>Naziv:</strong> {{ korisnik.kosarica[3].naziv }}</p>
       <img :src="slike.Kruh" alt="Kruh" class="w-10 h-10" />
       <p><strong>Kolicina:</strong> {{ korisnik.kosarica[3].kolicina }}</p>
+      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[3].naziv).toFixed(2) }} €</p>
+      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[3].naziv).toFixed(2) }}€</p>
     </div>    
 
 
