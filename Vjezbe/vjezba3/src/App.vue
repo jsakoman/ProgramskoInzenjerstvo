@@ -1,4 +1,23 @@
 <script setup>
+import { ref } from 'vue';
+
+const naziv = ref('');
+const cijena = ref(0);
+const kosarica = ref([]);
+
+function dodajProizvod() {
+  if (naziv.value && cijena.value > 0) {
+    const postoji = kosarica.value.find(stavka => stavka.naziv === naziv.value);
+    if (postoji) {
+      postoji.kolicina += 1;
+    } else { 
+      kosarica.value.push({ naziv: naziv.value, cijena: cijena.value, kolicina: 1})
+    }
+    naziv.value = '';
+    cijena.value = 0;
+  }
+}
+
 </script>
 
 <template>
