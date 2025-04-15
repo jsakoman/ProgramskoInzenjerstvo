@@ -31,6 +31,12 @@ function najskupljaStavka() {
   return maxStavka;
 }
 
+function ukupnaCijena() {
+  return korisnik.kosarica.reduce((total, stavka) => {
+    return total + ukupnoPoArtiklu(stavka.naziv);
+  }, 0).toFixed(2); 
+}
+
 </script>
 
 <template>
@@ -82,8 +88,17 @@ function najskupljaStavka() {
     <p><strong>Kolicina:</strong> {{ korisnik.kosarica[3].kolicina }}</p>
     <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[3].naziv).toFixed(2) }} €</p>
     <p><strong>Ukupno:</strong> {{ ukupnoPoArtiklu(korisnik.kosarica[3].naziv).toFixed(2) }}€</p>
-  </div>    
+  </div>  
+  
+  <!-- UKUOPNA CIJENA -->
+ <div class="mb-4 p-4 rounded border">
+  <h3><strong>Sveukupna cijena: </strong></h3>
+  <p> {{ ukupnaCijena() }}€</p>
+  </div>
+
 </template>
+
+
 
 <style scoped>
 </style>
