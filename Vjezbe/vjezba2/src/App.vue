@@ -7,13 +7,13 @@ const korisnik = podaci.korisnik
 </script>
 
 <template>
-  <div>
+  <div :class="korisnik.jeAdmin ? 'text-blue-500' : 'text-black'" class="p-4">
+    <h2 class="text-xl font-bold mb-2">Korisnicki podaci:</h2>
     <p><strong>Ime:</strong> {{ korisnik.osobni_podaci.ime }}</p>  
     <p><strong>Prezime:</strong> {{ korisnik.osobni_podaci.prezime }}</p>  
     <p><strong>Adresa:</strong> {{ korisnik.osobni_podaci.adresa.ulica }} {{ korisnik.osobni_podaci.adresa.broj }}, {{ korisnik.osobni_podaci.adresa.grad }}</p>  
     <p><strong>Telefon:</strong> {{ korisnik.osobni_podaci.broj_telefona }}</p>  
   </div>
-
 </template>
 
 <style scoped>
