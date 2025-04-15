@@ -15,7 +15,7 @@
       "jeAdmin": true,
       "osobni_podaci": {
         "ime": "Marko",
-        "prezime": "Krivić",
+        "prezime": "Krivic",
         "adresa": {
           "grad": "Pula",
           "ulica": "Veruda",
@@ -24,10 +24,10 @@
         "broj_telefona": "+091-123-456"
       },
       "kosarica": [
-        { "naziv": "Jabuka", "količina": 4 },
-        { "naziv": "Mrkva", "količina": 12 },
-        { "naziv": "Sir", "količina": 1 },
-        { "naziv": "Kruh", "količina": 3 }
+        { "naziv": "Jabuka", "kolicina": 4 },
+        { "naziv": "Mrkva", "kolicina": 12 },
+        { "naziv": "Sir", "kolicina": 1 },
+        { "naziv": "Kruh", "kolicina": 3 }
       ]
     }
   }
