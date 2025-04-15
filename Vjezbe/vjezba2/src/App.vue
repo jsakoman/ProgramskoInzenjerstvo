@@ -16,7 +16,20 @@ function ukupnoPoArtiklu(naziv) {
   return stavka ? cijena * stavka.kolicina : 0;
 }
 
+function najskupljaStavka() {
+  let maxStavka = null;
+  let maxCijena = 0;
 
+  korisnik.kosarica.forEach(stavka => {
+    const ukupno = ukupnoPoArtiklu(stavka.naziv);
+    if (ukupno > maxCijena) {
+      maxCijena = ukupno;
+      maxStavka = stavka.naziv;
+    }
+  });
+
+  return maxStavka;
+}
 
 </script>
 
@@ -30,45 +43,46 @@ function ukupnoPoArtiklu(naziv) {
   </div>
 
   <h2 class="text-xl font-bold mb-2">Sadržaj košarice</h2>
-  
+
   <!-- JABUKA -->
-  <div class="mb-4">
+  <div class="mb-4 p-4 rounded"
+    :class="najskupljaStavka() === korisnik.kosarica[0].naziv ? 'border-red-500 bg-red-100 border' : 'border-gray-300 border'">
     <p><strong>Naziv:</strong> {{ korisnik.kosarica[0].naziv }}</p>
     <img :src="slike.Jabuka" alt="Jabuka" class="w-10 h-10" />
     <p><strong>Kolicina:</strong> {{ korisnik.kosarica[0].kolicina }}</p>
     <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[0].naziv).toFixed(2) }} €</p>
-    <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[0].naziv).toFixed(2) }}€</p>
+    <p><strong>Ukupno:</strong> {{ ukupnoPoArtiklu(korisnik.kosarica[0].naziv).toFixed(2) }}€</p>
   </div>
 
-    <!-- MRKVA -->
-    <div class="mb-4">
-      <p><strong>Naziv:</strong> {{ korisnik.kosarica[1].naziv }}</p>
-      <img :src="slike.Mrkva" alt="Mrkva" class="w-10 h-10" />
-      <p><strong>Kolicina:</strong> {{ korisnik.kosarica[1].kolicina }}</p>
-      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[1].naziv).toFixed(2) }} €</p>
-      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[1].naziv).toFixed(2) }}€</p>
-    </div>
+  <!-- MRKVA -->
+  <div class="mb-4 p-4 rounded"
+    :class="najskupljaStavka() === korisnik.kosarica[1].naziv ? 'border-red-500 bg-red-100 border' : 'border-gray-300 border'">
+    <p><strong>Naziv:</strong> {{ korisnik.kosarica[1].naziv }}</p>
+    <img :src="slike.Mrkva" alt="Mrkva" class="w-10 h-10" />
+    <p><strong>Kolicina:</strong> {{ korisnik.kosarica[1].kolicina }}</p>
+    <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[1].naziv).toFixed(2) }} €</p>
+    <p><strong>Ukupno:</strong> {{ ukupnoPoArtiklu(korisnik.kosarica[1].naziv).toFixed(2) }}€</p>
+  </div>
 
-    <!-- SIR -->
-    <div class="mb-4">
-      <p><strong>Naziv:</strong> {{ korisnik.kosarica[2].naziv }}</p>
-      <img :src="slike.Sir" alt="Sir" class="w-10 h-10" />
-      <p><strong>Kolicina:</strong> {{ korisnik.kosarica[2].kolicina }}</p>
-      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[2].naziv).toFixed(2) }} €</p>
-      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[2].naziv).toFixed(2) }}€</p>
-    </div>    
+  <!-- SIR -->
+  <div class="mb-4 p-4 rounded"
+    :class="najskupljaStavka() === korisnik.kosarica[2].naziv ? 'border-red-500 bg-red-100 border' : 'border-gray-300 border'">
+    <p><strong>Naziv:</strong> {{ korisnik.kosarica[2].naziv }}</p>
+    <img :src="slike.Sir" alt="Sir" class="w-10 h-10" />
+    <p><strong>Kolicina:</strong> {{ korisnik.kosarica[2].kolicina }}</p>
+    <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[2].naziv).toFixed(2) }} €</p>
+    <p><strong>Ukupno:</strong> {{ ukupnoPoArtiklu(korisnik.kosarica[2].naziv).toFixed(2) }}€</p>
+  </div>    
 
-    <!-- KRUH -->
-    <div class="mb-4">
-      <p><strong>Naziv:</strong> {{ korisnik.kosarica[3].naziv }}</p>
-      <img :src="slike.Kruh" alt="Kruh" class="w-10 h-10" />
-      <p><strong>Kolicina:</strong> {{ korisnik.kosarica[3].kolicina }}</p>
-      <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[3].naziv).toFixed(2) }} €</p>
-      <p><strong>Ukupno:</strong> {{  ukupnoPoArtiklu(korisnik.kosarica[3].naziv).toFixed(2) }}€</p>
-    </div>    
-
-
-
+  <!-- KRUH -->
+  <div class="mb-4 p-4 rounded"
+    :class="najskupljaStavka() === korisnik.kosarica[3].naziv ? 'border-red-500 bg-red-100 border' : 'border-gray-300 border'">
+    <p><strong>Naziv:</strong> {{ korisnik.kosarica[3].naziv }}</p>
+    <img :src="slike.Kruh" alt="Kruh" class="w-10 h-10" />
+    <p><strong>Kolicina:</strong> {{ korisnik.kosarica[3].kolicina }}</p>
+    <p><strong>Cijena:</strong> {{ dohvatiCijenu(korisnik.kosarica[3].naziv).toFixed(2) }} €</p>
+    <p><strong>Ukupno:</strong> {{ ukupnoPoArtiklu(korisnik.kosarica[3].naziv).toFixed(2) }}€</p>
+  </div>    
 </template>
 
 <style scoped>
