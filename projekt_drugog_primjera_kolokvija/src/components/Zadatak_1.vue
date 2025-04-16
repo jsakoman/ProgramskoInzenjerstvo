@@ -5,6 +5,7 @@ const broj1 = ref('')
 const broj2 = ref('')
 const operacija = ref('')
 
+// computed funkcija koristi caching (privremena pohrana podataka) da ne mora konstantno vrtiti u pozadini nego samo kod promjene parametara se funkcija izvrsi
 const provjeraOperacije = computed(() => {
   const dozvoljeneOperacije = ['zbrajanje', 'oduzimanje', 'mnozenje', 'dijeljenje'];
   return dozvoljeneOperacije.includes(operacija.value);
