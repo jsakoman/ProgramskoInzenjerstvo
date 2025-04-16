@@ -27,6 +27,21 @@ function provjeraOperacije() {
                 <label>Operacija (zbrajanje, oduzimanje, mnozenje, dijeljenje):
                     <input v-model="operacija" type="text" class="border p-2"/>
                 </label>
+
+                <div v-if="!provjeraOperacije()">
+                    <p class="text-red-500">Nepoznata operacija!</p>
+                </div>
+                <div v-else>
+                    <p class="text-green-500">
+                        Rezultat:{{ 
+                            operacija === 'zbrajanje' ? Number(broj1) + Number(broj2) :
+                            operacija === 'oduzimanje' ? Number(broj1) - Number(broj2) :
+                            operacija === 'mnozenje' ? Number(broj1) * Number(broj2) :
+                            operacija === 'dijeljenje' ? Number(broj1) / Number(broj2) :
+                            ''
+                            }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
