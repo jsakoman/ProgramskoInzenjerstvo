@@ -6,7 +6,8 @@ const broj2 = ref('')
 const operacija = ref('')
 
 function provjeraOperacije() {
-    
+    const dozvoljeneOperacije = ['zbrajanje', 'oduzimanje', 'mnozenje', 'dijeljenje'];
+    return dozvoljeneOperacije.includes(operacija.value);
 }
 
 </script>
