@@ -37,8 +37,9 @@ function provjeraOperacije() {
                             operacija === 'zbrajanje' ? Number(broj1) + Number(broj2) :
                             operacija === 'oduzimanje' ? Number(broj1) - Number(broj2) :
                             operacija === 'mnozenje' ? Number(broj1) * Number(broj2) :
-                            operacija === 'dijeljenje' ? Number(broj1) / Number(broj2) :
-                            ''
+                            operacija === 'dijeljenje' ? 
+                                (Number(broj2) != 0 ? Number(broj1) / Number(broj2) : ' Dijeljenje s 0 nije moguce!')
+                            : ''
                             }}
                     </p>
                 </div>
