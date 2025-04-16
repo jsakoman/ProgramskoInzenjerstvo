@@ -1,14 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const broj1 = ref('')
 const broj2 = ref('')
 const operacija = ref('')
 
-function provjeraOperacije() {
-    const dozvoljeneOperacije = ['zbrajanje', 'oduzimanje', 'mnozenje', 'dijeljenje'];
-    return dozvoljeneOperacije.includes(operacija.value);
-}
+const provjeraOperacije = computed(() => {
+  const dozvoljeneOperacije = ['zbrajanje', 'oduzimanje', 'mnozenje', 'dijeljenje'];
+  return dozvoljeneOperacije.includes(operacija.value);
+});
 
 </script>
 
@@ -28,7 +28,7 @@ function provjeraOperacije() {
                     <input v-model="operacija" type="text" class="border p-2"/>
                 </label>
 
-                <div v-if="!provjeraOperacije()">
+                <div v-if="!provjeraOperacije">
                     <p class="text-red-500">Nepoznata operacija!</p>
                 </div>
                 <div v-else>
