@@ -44,7 +44,11 @@
 
         <div v-for="(sportas, index) in sortiraniSportasi" :key="index" border>
             <div class="border mb-4 bg-blue-50">
-            <p><strong>Ime:</strong> {{ sportas.ime }}</p>
+            <p><strong>Ime:</strong> 
+                <span v-if="index===0">🥇</span>
+                <span v-if="index===1">🥈</span>
+                <span v-if="index===2">🥉</span>
+                {{ sportas.ime }}</p>
             <p><strong>Disciplina:</strong> {{ sportas.disciplina }}</p>
             <p><strong>Starost:</strong> {{ sportas.godine }}</p>
             <p><strong>Natjecanja:</strong></p>
