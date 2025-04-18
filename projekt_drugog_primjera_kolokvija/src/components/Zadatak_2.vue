@@ -23,6 +23,11 @@
     ])
 
     const novo_natjecanje = ref([]) //niz jer imamo vise sportasa
+
+    function dodajNovo(index) {
+        sportasi.value[index].natjecanja.push(novo_natjecanje.value[index]);
+        novo_natjecanje.value[index] = '';
+    }
 </script>
 
 <template>
@@ -41,6 +46,7 @@
                 </li>
             </ul>
             <input v-model="novo_natjecanje[index]" placeholder="Dodaj natjecanje"/>
+            <button @click="dodajNovo(index)">+</button>
         </div>
 
         </div>
