@@ -28,6 +28,10 @@
         sportasi.value[index].natjecanja.push(novo_natjecanje.value[index]);
         novo_natjecanje.value[index] = '';
     }
+
+    function ukloni(sportas, index) {
+        sportasi.value[sportas].natjecanja.splice(index, 1);
+    }
 </script>
 
 <template>
@@ -43,6 +47,7 @@
             <ul>
                 <li v-for="(natjecanje, nIndex) in sportas.natjecanja" :key="nIndex">
                     {{ natjecanje }}
+                    <button @click="ukloni(index,nIndex)">-</button>
                 </li>
             </ul>
             <input v-model="novo_natjecanje[index]" placeholder="Dodaj natjecanje"/>
