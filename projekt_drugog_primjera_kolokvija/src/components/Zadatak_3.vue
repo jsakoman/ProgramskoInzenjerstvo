@@ -1,4 +1,6 @@
 <script setup>
+import Slika from './Slika.vue';
+
     const galerija = [    
         {
             slikar: "Pablo Picasso",
@@ -23,7 +25,13 @@
 
 <template>
     <div>
-        ZADATAK 3
+        <h1>ZADATAK 3</h1>
+        <Slika v-for="(item,index) in galerija" :key="index"
+            :slikar="item.slikar"
+            :godina="item.godina"
+            :naslov="item.naslov"
+            :slika="item.slika" />
+
     </div>
 </template>
 
