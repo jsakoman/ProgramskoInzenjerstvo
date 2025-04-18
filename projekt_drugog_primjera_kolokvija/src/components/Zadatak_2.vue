@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, computed } from 'vue';
 
     const sportasi = ref([
         {
@@ -22,6 +22,10 @@
         }
     ])
 
+    const sortiraniSportasi = computed(
+        () => { return [...sportasi.value].sort
+            ((a,b) => b.natjecanja.length - a.natjecanja.length)});
+
     const novo_natjecanje = ref([]) //niz jer imamo vise sportasa
 
     function dodajNovo(index) {
@@ -38,7 +42,7 @@
     <div>
         <h1 class="text-2xl font-bold">ZADATAK 2</h1>
 
-        <div v-for="(sportas, index) in sportasi" :key="index" border>
+        <div v-for="(sportas, index) in sortiraniSportasi" :key="index" border>
             <div class="border mb-4 bg-blue-50">
             <p><strong>Ime:</strong> {{ sportas.ime }}</p>
             <p><strong>Disciplina:</strong> {{ sportas.disciplina }}</p>
