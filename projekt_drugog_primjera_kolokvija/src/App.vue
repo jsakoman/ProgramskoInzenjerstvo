@@ -8,8 +8,8 @@
     <div>  
         <!--Zadaci se rješavaju unutar komponenti-->
         <!--Za biranje zadataka treba mjenjati true/false-->
-        <Zadatak_1 v-if="true"/>
-        <Zadatak_2 v-if="false"/>
+        <Zadatak_1 v-if="false"/>
+        <Zadatak_2 v-if="true"/>
         <Zadatak_3 v-if="false"/>
     </div>
 </template>

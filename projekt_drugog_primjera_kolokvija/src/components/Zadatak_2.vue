@@ -25,7 +25,22 @@
 
 <template>
     <div>
-        ZADATAK 2
+        <h1 class="text-2xl font-bold">ZADATAK 2</h1>
+
+        <div v-for="(sportas, index) in sportasi" :key="index" border>
+            <div class="border mb-4 bg-blue-50">
+            <p><strong>Ime:</strong> {{ sportas.ime }}</p>
+            <p><strong>Disciplina:</strong> {{ sportas.disciplina }}</p>
+            <p><strong>Starost:</strong> {{ sportas.godine }}</p>
+            <p><strong>Natjecanja:</strong></p>
+            <ul>
+                <li v-for="(natjecanje, nIndex) in sportas.natjecanja" :key="nIndex">
+                    {{ natjecanje }}
+                </li>
+            </ul>
+        </div>
+
+        </div>
     </div>
 </template>
 
