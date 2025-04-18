@@ -21,6 +21,8 @@
             natjecanja: ['Europsko prvenstvo']
         }
     ])
+
+    const novo_natjecanje = ref([]) //niz jer imamo vise sportasa
 </script>
 
 <template>
@@ -38,6 +40,7 @@
                     {{ natjecanje }}
                 </li>
             </ul>
+            <input v-model="novo_natjecanje[index]" placeholder="Dodaj natjecanje"/>
         </div>
 
         </div>
