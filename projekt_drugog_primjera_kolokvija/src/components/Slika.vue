@@ -15,8 +15,14 @@ function starost() {
 <template>
   <div>
     <img :src="props.slika" height="100" />
-    <p><strong>Naslov: {{ props.naslov }}</strong></p>
+    <p :class="{ underline: starost() > 136 }"><strong>Naslov: {{ props.naslov }}</strong></p>
     <p><strong>Starost: {{ starost() }} godina</strong></p>
     <p><strong>Slikar: {{ props.slikar }}</strong></p>
   </div>
 </template>
+
+<style scoped>
+.underline {
+    text-decoration: underline;
+}
+</style>
